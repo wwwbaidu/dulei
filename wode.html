@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		#canvas{
+			width: 1000px;
+			height: 1000px;
+			background: #fff;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" ></canvas>
+	<script>
+	var canvas = document.getElementById("canvas");   
+    var context = canvas.getContext("2d");   
+    context.beginPath();   
+
+    for (var i = 0; i < 5; i++) {   
+        context.lineTo(Math.cos((18+i*72)/180*Math.PI)*200+200,   
+                        -Math.sin((18+i*72)/180*Math.PI)*200+200);   
+        context.lineTo(Math.cos((54+i*72)/180*Math.PI)*80+200,   
+                        -Math.sin((54+i*72)/180*Math.PI)*80+200);   
+    }   
+    
+    context.closePath();   
+    context.lineWidth="3";   
+    context.fillStyle = "#F6F152";   
+    context.strokeStyle = "#F5270B";   
+    context.fill();   
+    context.stroke();   
+	</script>
+</body>
+</html>
